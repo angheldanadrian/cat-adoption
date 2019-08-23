@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - 10
+
+addons:
+  chrome: stable
+  
+before_install:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+
+env:
+  - workerCount=3 timeout=600000
+matrix:
+  fast_finish: true
+branches:
+  only:
+  - master
+  - /^release-.*/
+install:
+  - npm uninstall typescript --no-save
+  - npm uninstall tslint --no-save
+  - npm install
+cache:
+  directories:
+    - node_modules   
+ 
+git:
+  depth: 1
