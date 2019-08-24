@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "webpack webpack-cli --mode production"
+    "postinstall": "webpack-cli webpack --mode production"
   },
   "private": true,
   "dependencies": {
