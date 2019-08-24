@@ -22,3 +22,11 @@ install:
 script:
   - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
   - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
+  
+ deploy:
+  provider: heroku
+  api_key:
+    secure: 146d5c99-e433-4c4c-af68-abcd6175967a
+  app: ci-cd-cat-adoption
+  on:
+    repo: angheldanadrian/cat-adoption-test
